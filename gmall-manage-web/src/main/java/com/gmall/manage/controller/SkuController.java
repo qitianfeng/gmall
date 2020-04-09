@@ -16,6 +16,25 @@ public class SkuController {
     @Reference
     SkuService skuService;
 
+
+    /***
+     * 将数据导入es中
+     * @return
+     */
+
+    @RequestMapping("import")
+    @ResponseBody
+    public String imports(){
+        skuService.put();
+        return "success";
+    }
+
+
+    /****
+     * 保存数据到数据库中
+     * @param pmsSkuInfo
+     * @return
+     */
     @RequestMapping("saveSkuInfo")
     @ResponseBody
     public String saveSkuInfo(@RequestBody PmsSkuInfo pmsSkuInfo){
@@ -28,7 +47,6 @@ public class SkuController {
         if(StringUtils.isBlank(skuDefaultImg)){
             pmsSkuInfo.setSkuDefaultImg(pmsSkuInfo.getSkuImageList().get(0).getImgUrl());
         }
-
 
         skuService.saveSkuInfo(pmsSkuInfo);
 

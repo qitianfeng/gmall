@@ -1,24 +1,21 @@
 package com.gmall.search;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.atguigu.gmall.bean.PmsSearchSkuInfo;
-import com.atguigu.gmall.bean.PmsSkuInfo;
-import com.atguigu.gmall.service.SkuService;
+import com.gmall.bean.PmsSearchSkuInfo;
+import com.gmall.bean.PmsSkuInfo;
+import com.gmall.service.SkuService;
 import io.searchbox.client.JestClient;
 import io.searchbox.core.Index;
 import io.searchbox.core.Search;
 import io.searchbox.core.SearchResult;
-import jodd.io.findfile.FindFile;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.TermQueryBuilder;
-import org.elasticsearch.index.query.TermsQueryBuilder;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.elasticsearch.jest.JestAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -39,15 +36,14 @@ public class GmallSearchServiceApplicationTests {
 
 	@Test
 	public void contextLoads() throws IOException {
-		put();
+			put();
 	}
 
 	public void put() throws IOException {
 
 		// 查询mysql数据
-		List<PmsSkuInfo> pmsSkuInfoList = new ArrayList<>();
 
-		pmsSkuInfoList = skuService.getAllSku("61");
+		List<PmsSkuInfo> pmsSkuInfoList = skuService.getAllSku("61");
 
 		// 转化为es的数据结构
 		List<PmsSearchSkuInfo> pmsSearchSkuInfos = new ArrayList<>();

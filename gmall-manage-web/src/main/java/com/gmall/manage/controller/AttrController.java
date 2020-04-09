@@ -1,8 +1,8 @@
 package com.gmall.manage.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.atguigu.gmall.bean.PmsBaseAttrValue;
 import com.gmall.bean.PmsBaseAttrInfo;
+import com.gmall.bean.PmsBaseAttrValue;
 import com.gmall.bean.PmsBaseSaleAttr;
 import com.gmall.service.AttrService;
 import org.springframework.stereotype.Controller;

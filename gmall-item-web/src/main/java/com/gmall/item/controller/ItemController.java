@@ -9,6 +9,7 @@ import com.gmall.service.SkuService;
 import com.gmall.service.SpuService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -18,6 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
+@CrossOrigin
 public class ItemController {
 
     @Reference
@@ -52,6 +54,8 @@ public class ItemController {
             for (PmsSkuSaleAttrValue pmsSkuSaleAttrValue : skuSaleAttrValueList) {
                 k += pmsSkuSaleAttrValue.getSaleAttrValueId() + "|";// "239|245"
             }
+            //去除多增加的 | 分隔符
+            k=k.substring(0,k.length()-1);
             skuSaleAttrHash.put(k,v);
         }
 

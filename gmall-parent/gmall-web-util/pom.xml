@@ -15,7 +15,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.atguigu.gmall</groupId>
+            <groupId>com.gmall</groupId>
             <artifactId>gmall-common-util</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
@@ -25,8 +25,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-
-
 
         <!-- thymeleaf支持包、可以设置松校验、热部署 -->
         <dependency>
@@ -45,6 +43,16 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>com.gitee.reger</groupId>
+            <artifactId>spring-boot-starter-dubbo</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.0</version>
+        </dependency>
 
     </dependencies>
 
